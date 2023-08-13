@@ -1,13 +1,11 @@
 import './assets/css/App.css';
+import LoginContext from './pages/admin/Admin';
 import Rotas from "./routes";
-import { AuthProvider } from './pages/admin/Admin';
 
 
 function App() {
   return (
-    <AuthProvider>
-      <Rotas />
-    </AuthProvider>
+    <Rotas />
   );
 }
 
