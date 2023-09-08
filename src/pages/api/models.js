@@ -61,13 +61,13 @@ class Post {
    * Define o post pelo Id
    */
   setById(id) {
-    handleGetOnly("id", id)
+    handleGetOnly("_id", id)
       .then((response) => {
         this.id = id;
         this.title = response[0].title;
         this.content = response[0].content;
-        this.upvotes = response[0].upv;
-        this.downvotes = response[0].downv;
+        this.upvotes = response[0].upvotes;
+        this.downvotes = response[0].downvotes;
         this.timestamp = response[0].timestamp;
         this.slug = response[0].slug;
       })
