@@ -37,7 +37,7 @@ const Rotas = () => {
                     } path = "/create" />
 
                     <Route element = { <AdminLogin /> } path = "/login" />
-                    <Route element = { <Expanded /> } path = "/:id" />
+                    <Route element = { <Expanded /> } path = "/:slug" />
                 </Routes>
             </BrowserRouter>
         </div>

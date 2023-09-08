@@ -20,6 +20,7 @@ class Post {
         this.upvotes = 0;
         this.downvotes = 0;
         this.timestamp = 0;
+        this.slug = null;
     }
 
     setId (id) {
@@ -41,6 +42,10 @@ class Post {
 
     setTimestamp (timestamp) {
         this.timestamp = timestamp;
+    }
+
+    setSlug (slug) {
+        this.slug = slug;
     }
 
     /**
@@ -68,6 +73,7 @@ class Post {
                 this.upvotes = response[0].upv;
                 this.downvotes = response[0].downv;
                 this.timestamp = response[0].timestamp;
+                this.slug = response[0].slug;
             })
             .catch(error => {
                 console.log(error);
@@ -87,14 +93,6 @@ class Post {
     updateRating (rtype) {
         // Previne TypeError
         if (this.id != 0) {
-
-            if (rtype === "upv") {
-                this.upvotes += 1;
-            }
-            if (rtype === "downv") {
-                this.downvotes += 1;
-            }
-            
             handleRating(this.id, rtype)
                 .then(response => {
                     console.log(response);

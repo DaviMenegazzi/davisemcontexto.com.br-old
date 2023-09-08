@@ -37,7 +37,7 @@ function Posts ({ postObject }) {
     return (
         <div className="post-holder">
             <div className="post-contents">
-                <a href={postObject.id}>
+                <a href={"/"+postObject.slug}>
                     <div className="post-header">
                         <h1 className='title'> 
                             { 

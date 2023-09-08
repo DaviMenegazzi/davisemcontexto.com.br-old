@@ -40,6 +40,7 @@ const useGenerateFeed = () => {
             post.setContent(response[i].content);
             post.setRating(response[i].upv, response[i].downv);
             post.setTimestamp(response[i].timestamp);
+            post.setSlug(response[i].slug);
 
             // Adiciona a classe do post para a variável `feedList` e
             // a tag do post para `postList`. 

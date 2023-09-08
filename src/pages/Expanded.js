@@ -7,7 +7,7 @@ import ExpendedPage from "../components/ExpandedPage";
 import { handleGetOnly } from "./api/api";
 
 function Expanded() {
-  const { id } = useParams();
+  const { slug } = useParams();
 
   /*
     Esse ID agora é procurado no banco de dados pra ver se existe
@@ -18,7 +18,7 @@ function Expanded() {
   const [expPage, setExpPage] = React.useState(null);
 
   React.useEffect(() => {
-    handleGetOnly(id) // pega somente o post baseado no id
+    handleGetOnly("slug", slug) // pega somente o post baseado no id
       .then((response) => {
         setExpPage(
           <ExpendedPage

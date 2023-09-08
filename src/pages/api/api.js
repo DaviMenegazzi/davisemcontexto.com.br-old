@@ -43,11 +43,12 @@ const handleGet = () => {
   });
 };
 
-const handleGetOnly = (id) => {
+const handleGetOnly = (key, value) => {
   return axios.get(`${apiHOST}${apiROUTES.get_only}`, {
     crossDomain: true,
     params: {
-      _id: id,
+      key: key,
+      value: value
     },
   });
 };
