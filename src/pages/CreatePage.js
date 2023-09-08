@@ -1,48 +1,26 @@
 import React from "react";
-import axios from "axios";
 
-import { Post } from "./api/models";
+import "../assets/css/create.css";
 import { LoginContext } from "./LoginPage";
 import { NotFound } from "./errors/NotFound";
+import Create from "../components/Create";
 
 const CreatePage = () => {
-  const [created, setCreate] = React.useState(null);
 
-  const handleChange = (event) => {
-    setCreate({
-      ...created,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    /** Cria o post */
-    const post = new Post(created.title, created.content);
-    post.create();
-  };
-
-  const isAuth = React.useContext(LoginContext);
-
-  return (
-    <div>
-      {isAuth.isAuth && (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <div className="form-field">
-              <p>Título</p>
-              <input name="title" onChange={handleChange} />
-            </div>
-            <div className="form-field">
-              <p>Conteúdo</p>
-              <input name="content" onChange={handleChange} />
-            </div>
-            <button type="submit">ENVIAR</button>
-          </div>
-        </form>
-      )}{" "}
-      : {<NotFound />}
+  const CreateForm = () => {
+    const isAuth = React.useContext(LoginContext);
+    if (!isAuth.isAuth) {
+      return <NotFound />
+    }
+    return (     
+      <Create />
+    )
+  }
+  
+  return ( 
+    <div className="page">
+      <h1>Criar</h1>
+      <CreateForm />
     </div>
   );
 };

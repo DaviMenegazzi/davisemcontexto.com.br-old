@@ -10,9 +10,13 @@ const Header = () => {
       return (
         <div id="header-options">
           <div id="create-bttn">
-            <a href="/create">Criar</a>
+            <a href="/create">
+              Criar
+            </a>
           </div>
-          <div id="user-profile">Usuário Logado.</div>
+          <div id="user-profile">
+            Usuário Logado.
+          </div>
         </div>
       );
     } else return;

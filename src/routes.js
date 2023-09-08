@@ -13,7 +13,6 @@ const Rotas = () => {
   React.useEffect(() => {
     handleAuth()
       .then((response) => {
-        console.log(response.data.code);
         setAuth(response.data.code);
       })
       .catch((err) => {
