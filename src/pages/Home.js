@@ -7,7 +7,6 @@ import { Header } from "../components/Header";
 // É essa página que será renderizada no App.js
 
 const Home = () => {
-
   let postList = useGenerateFeed();
 
   return (
@@ -15,9 +14,7 @@ const Home = () => {
       <header className="app-header">
         <Header />
       </header>
-      <div className="post-base"> 
-        {postList}
-      </div>
+      <div className="post-base">{postList}</div>
     </div>
   );
 };

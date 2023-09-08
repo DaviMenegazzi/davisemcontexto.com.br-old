@@ -33,7 +33,7 @@ const handleAuth = () => {
 
   return axios.post(`${apiHOST}${apiROUTES.auth}?token=${getCookie("token")}`, {
     crossDomain: true,
-  })
+  });
 };
 
 // POST RELATED
@@ -48,30 +48,24 @@ const handleGetOnly = (key, value) => {
     crossDomain: true,
     params: {
       key: key,
-      value: value
+      value: value,
     },
   });
 };
 
 const handleCreate = (title, content) => {
   let str_query = `?title=${title}&content=${content}`;
-  return axios.post(
-    `${apiHOST}${apiROUTES.create}${str_query}`,
-    {
-      crossDomain: true,
-    }
-  );
+  return axios.post(`${apiHOST}${apiROUTES.create}${str_query}`, {
+    crossDomain: true,
+  });
 };
 
 const handleRating = (id, type) => {
   let rating_query = `?_id=${id}&type=${type}`;
-  return axios.post(
-    `${apiHOST}${apiROUTES.update_rating}${rating_query}`,
-    {
-      crossDomain: true,
-    }
-  );
-}
+  return axios.post(`${apiHOST}${apiROUTES.update_rating}${rating_query}`, {
+    crossDomain: true,
+  });
+};
 
 export {
   handleGet,
@@ -79,5 +73,5 @@ export {
   handleGetOnly,
   handleLogin,
   handleAuth,
-  handleRating
+  handleRating,
 };

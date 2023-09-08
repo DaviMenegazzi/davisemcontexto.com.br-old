@@ -38,22 +38,31 @@ const AdminLogin = () => {
     <div className="text-center m-5-auto">
       <h2>Entrar</h2>
       <form>
-          <p>
-              <label>Nome</label><br/>
-              <input onChange={handleChange} type="text" name="Nome" required />
-          </p>
-          <p>
-              <label>Senha</label>
-              <Link to="/forget-password"><label className="right-label">Esqueceu a senha?</label></Link>
-              <br/>
-              <input onChange={handleChange} type="password" name="Senha" required />
-          </p>
-          <p>
-              <button onClick={handleSubmit} id="sub_btn" type="submit">Login</button>
-          </p>
+        <p>
+          <label>Nome</label>
+          <br />
+          <input onChange={handleChange} type="text" name="Nome" required />
+        </p>
+        <p>
+          <label>Senha</label>
+          <Link to="/forget-password">
+            <label className="right-label">Esqueceu a senha?</label>
+          </Link>
+          <br />
+          <input
+            onChange={handleChange}
+            type="password"
+            name="Senha"
+            required
+          />
+        </p>
+        <p>
+          <button onClick={handleSubmit} id="sub_btn" type="submit">
+            Login
+          </button>
+        </p>
       </form>
     </div>
-
   );
 };
 
