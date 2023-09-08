@@ -1,6 +1,5 @@
 import React from "react";
 
-import Posts from "../../components/Posts";
 import { handleGet } from "../api/api";
 import { Post } from "../api/models";
 
@@ -33,7 +32,7 @@ const useGenerateFeed = () => {
       post.setId(response[i]._id);
       post.setTitle(response[i].title);
       post.setContent(response[i].content);
-      post.setRating(response[i].upv, response[i].downv);
+      post.setRating(response[i].upvotes, response[i].downvotes);
       post.setTimestamp(response[i].timestamp);
       post.setSlug(response[i].slug);
 
