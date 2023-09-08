@@ -2,10 +2,10 @@ import React from "react";
 import axios from "axios";
 
 import { Post } from "./api/models";
-import LoginContext from "./admin/Admin";
+import { LoginContext } from "./LoginPage";
 import { NotFound } from "./errors/NotFound";
 
-const Create = () => {
+const CreatePage = () => {
   const [created, setCreate] = React.useState(null);
 
   const handleChange = (event) => {
@@ -18,6 +18,7 @@ const Create = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    /** Cria o post */
     const post = new Post(created.title, created.content);
     post.create();
   };
@@ -46,4 +47,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePage;

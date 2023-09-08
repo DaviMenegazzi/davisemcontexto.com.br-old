@@ -11,9 +11,7 @@ const useGenerateFeed = () => {
   /** A lista com todas as TAGS para os posts */
   var postList = [];
 
-  /**
-   * A variável `response` possui todos os posts do servidor.
-   */
+  /** A variável `response` possui todos os posts do servidor. */
   const [response, setResponse] = React.useState(null);
   React.useEffect(() => {
     handleGet()
@@ -27,7 +25,7 @@ const useGenerateFeed = () => {
 
   /**
    * IF Previne TypeError
-   * Note: AXIOS é horrível
+   * NOTE: AXIOS é horrível
    */
   if (response != null) {
     for (let i = 0; i < response.length; i++) {

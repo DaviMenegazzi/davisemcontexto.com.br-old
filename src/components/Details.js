@@ -1,6 +1,6 @@
 import "../assets/css/expanded.css";
 
-function ExpendedPage({ title, content }) {
+function Details ({ title, content }) {
   return (
     <div className="page">
       <div className="page-content">
@@ -15,4 +15,4 @@ function ExpendedPage({ title, content }) {
   );
 }
 
-export default ExpendedPage;
+export default Details;

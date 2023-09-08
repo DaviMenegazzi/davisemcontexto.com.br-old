@@ -1,9 +1,7 @@
-import { useContext } from "react";
 import React from "react";
 import "../assets/css/header.css";
 
-import LoginContext from "../pages/admin/Admin";
-import { NotFound } from "../pages/errors/NotFound";
+import {LoginContext} from "../pages/LoginPage";
 
 const Header = () => {
   const ShowsPostButtonWhenUserLoggedIn = () => {
@@ -23,7 +21,9 @@ const Header = () => {
   return (
     <div className="header-base">
       <a href="/" className="fill-div">
-        <p id="header-title">davisemcontexto.com.br</p>
+        <p id="header-title">
+          davisemcontexto.com.br
+        </p>
       </a>
       <ShowsPostButtonWhenUserLoggedIn />
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useGenerateFeed } from "./feed/generate";
 import { Header } from "../components/Header";
@@ -14,7 +14,9 @@ const Home = () => {
       <header className="app-header">
         <Header />
       </header>
-      <div className="post-base">{postList}</div>
+      <div className="post-base">
+        {postList}
+      </div>
     </div>
   );
 };

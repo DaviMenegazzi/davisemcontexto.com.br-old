@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../../assets/css/adminlogin.css";
-import { handleLogin } from "../api/api";
+import "../assets/css/adminlogin.css";
+import { handleLogin } from "./api/api";
 
 // Essa é o login para ativar a opção de admin
 // ou seja, o caminho "/login" do website
 
-const AdminLogin = () => {
+const LoginContext = React.createContext();
+
+const LoginPage = () => {
   const [userData, setUserData] = useState({
     Nome: null,
     Senha: null,
@@ -66,4 +68,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export { LoginPage, LoginContext };

@@ -3,11 +3,10 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { handleAuth } from "./pages/api/api";
 import "./assets/css/App.css";
 
-import Home from "./pages/Home";
-import LoginContext from "./pages/admin/Admin";
-import AdminLogin from "./pages/admin/AdminLogin";
-import Expanded from "./pages/Expanded";
-import Create from "./pages/Create";
+import HomePage from "./pages/HomePage";
+import { LoginPage, LoginContext } from "./pages/LoginPage";
+import DetailsPage from "./pages/DetailsPage";
+import CreatePage from "./pages/CreatePage";
 
 const Rotas = () => {
   const [isAuth, setAuth] = React.useState(null);
@@ -28,7 +27,7 @@ const Rotas = () => {
           <Route
             element={
               <LoginContext.Provider value={{ isAuth }}>
-                <Home />
+                <HomePage />
               </LoginContext.Provider>
             }
             path="/"
@@ -38,14 +37,14 @@ const Rotas = () => {
           <Route
             element={
               <LoginContext.Provider value={{ isAuth }}>
-                <Create />
+                <CreatePage />
               </LoginContext.Provider>
             }
             path="/create"
           />
 
-          <Route element={<AdminLogin />} path="/login" />
-          <Route element={<Expanded />} path="/:slug" />
+          <Route element={<LoginPage />} path="/login" />
+          <Route element={<DetailsPage />} path="/:slug" />
         </Routes>
       </BrowserRouter>
     </div>

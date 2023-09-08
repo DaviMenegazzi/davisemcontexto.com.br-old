@@ -12,6 +12,10 @@
     font-weight: 800; 
 }
 
+.header-base {
+    background-color: whitesmoke;
+}
+
 .header-base #header-options {
     display: flex;
 }
