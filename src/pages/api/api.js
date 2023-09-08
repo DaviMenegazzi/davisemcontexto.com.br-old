@@ -9,6 +9,7 @@ const apiROUTES = {
   create: "create",
   login: "login",
   auth: "auth",
+  update_rating: "update_rating",
 };
 
 //USER RELATED
@@ -52,13 +53,24 @@ const handleGetOnly = (id) => {
 };
 
 const handleCreate = (title, content) => {
+  let str_query = `?title=${title}&content=${content}`;
   return axios.post(
-    `${apiHOST}${apiROUTES.create}?title=${title}&content=${content}`,
+    `${apiHOST}${apiROUTES.create}${str_query}`,
     {
       crossDomain: true,
     }
   );
 };
+
+const handleRating = (id, type) => {
+  let rating_query = `?_id=${id}&type=${type}`;
+  return axios.post(
+    `${apiHOST}${apiROUTES.update_rating}${rating_query}`,
+    {
+      crossDomain: true,
+    }
+  );
+}
 
 export {
   handleGet,
@@ -66,4 +78,5 @@ export {
   handleGetOnly,
   handleLogin,
   handleAuth,
+  handleRating
 };

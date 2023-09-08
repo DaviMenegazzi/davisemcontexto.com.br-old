@@ -1,0 +1,29 @@
+.page {
+    width: auto;
+    height: auto;
+}
+
+.page-content {
+    width: fit-content;
+    height: fit-content;
+    padding: 90px;
+}
+
+.post-title-holder {
+    width: auto;
+}
+
+.post-content-holder {
+    width: auto;
+}
+
+.post-title {
+    color: black;
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+.post-content {
+    color: gray;
+    font-size: 12pt;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import { handleCreate } from "./api/api";
+import { Post } from "./api/models";
 import LoginContext from "./admin/Admin";
 import { NotFound } from "./errors/NotFound";
 
@@ -18,39 +18,35 @@ const Create = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    handleCreate(created.title, created.content)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        return error;
-      });
+    const post = new Post(
+      created.title, created.content
+    );
+    post.create();
   };
 
-  function CreateForm() {
-    return (
-      <form onSubmit={handleSubmit}>
-        <a>informe um titulo</a>
-        <input name="title" onChange={handleChange}></input>
-        <input name="content" onChange={handleChange}></input>
-        <button type="submit">ENVIAR</button>
-      </form>
-    )
-  }
+  const isAuth = React.useContext(LoginContext);
 
-  function UserLoggedOrNot ({ children }) {
-    const auth = React.useContext(LoginContext);
-    if(auth.isAuth) {
-      return(
-        <div>
-          <CreateForm />
-          { children }
-        </div>
-      )
-    } else { return ( <NotFound /> ) }
-  }
-
-  return ( <div> <UserLoggedOrNot /> </div> );
+  return ( 
+    <div>
+        { isAuth.isAuth && 
+            <form onSubmit={handleSubmit}>
+              <div>
+                <div className="form-field">
+                  <p>Título</p>
+                  <input name="title" onChange={handleChange} />
+                </div>
+                <div className="form-field">
+                  <p>Conteúdo</p>
+                  <input name="content" onChange={handleChange} />
+                </div>
+                <button type="submit">ENVIAR</button>
+              </div>
+            </form>
+        } : {
+          <NotFound />
+        }
+    </div>
+  );
 };
 
 export default Create;

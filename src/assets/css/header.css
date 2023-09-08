@@ -1,0 +1,32 @@
+
+.header {
+    display: flex;
+}
+
+#header-title {
+    margin: 20px;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 800; 
+}
+
+.header-base #header-options {
+    display: flex;
+}
+
+#create-bttn {
+    margin: 20px;
+}
+
+#create-bttn a {
+    text-decoration: none;
+    color: black;
+}
+
+#user-profile {
+    margin: 20px;
+    color: green;
+    font-weight: 500;
+}

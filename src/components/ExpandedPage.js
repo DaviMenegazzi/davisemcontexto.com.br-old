@@ -1,13 +1,15 @@
-import '../assets/css/posts.css';
+import '../assets/css/expanded.css';
 
 function ExpendedPage ({title, content}) {
     return (
-        <div className="post-background">
-            <div className="post-fill">
-                <a className='post-fill-div'>
-                    <h3 className="post-content-title"> {title} </h3>
-                    <p className="post-content">  {content} </p>
-                </a>
+        <div className="page">
+            <div className="page-content">
+                <div className="post-title-holder">
+                    <h4 className="post-title">{ title }</h4>
+                </div>
+                <div className="post-content-holder">
+                    <p className="post-content">{ content }</p>
+                </div>
             </div>
         </div>
     )

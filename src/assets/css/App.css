@@ -8,3 +8,24 @@
   flex-direction: column;
   color: white;
 }
+
+.header-base {
+  width: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  display: flex;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  padding: 20px;
+  color: black;
+}
+
+.fill-div {
+  text-decoration: none;
+}

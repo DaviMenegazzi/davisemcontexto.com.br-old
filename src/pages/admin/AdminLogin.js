@@ -35,21 +35,25 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="page-bg">
-      <form onSubmit={handleSubmit}>
-        <div className="form">
-          <div className="form-field">
-            <p>Nome</p>
-            <input name="Nome" onChange={handleChange} />
-          </div>
-          <div className="form-field">
-            <p>Senha</p>
-            <input type="password" name="Senha" onChange={handleChange} />
-          </div>
-          <button onClick={handleSubmit}> Enviar</button>
-        </div>
+    <div className="text-center m-5-auto">
+      <h2>Entrar</h2>
+      <form>
+          <p>
+              <label>Nome</label><br/>
+              <input onChange={handleChange} type="text" name="Nome" required />
+          </p>
+          <p>
+              <label>Senha</label>
+              <Link to="/forget-password"><label className="right-label">Esqueceu a senha?</label></Link>
+              <br/>
+              <input onChange={handleChange} type="password" name="Senha" required />
+          </p>
+          <p>
+              <button onClick={handleSubmit} id="sub_btn" type="submit">Login</button>
+          </p>
       </form>
     </div>
+
   );
 };
 

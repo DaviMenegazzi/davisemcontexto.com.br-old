@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { handleAuth, verifyToken } from "./pages/api/api";
+import { handleAuth } from "./pages/api/api";
+import './assets/css/App.css';
 
 import Home from "./pages/Home";
 import LoginContext from "./pages/admin/Admin";
@@ -13,29 +14,33 @@ const Rotas = () => {
     const [isAuth, setAuth] = React.useState(null);
     React.useEffect(() => {
         handleAuth()
-        .then((response) => {
-            setAuth(response.data.code);
-        })
-        .catch(err => { console.log(err) })
+            .then((response) => {
+                console.log(response.data.code);
+                setAuth(response.data.code);
+            })
+            .catch(err => { console.log(err) })
     });
-    console.log(isAuth);
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route element = { 
-                    <LoginContext.Provider value={{isAuth}}>
-                        <Home />
-                    </LoginContext.Provider>
-                } path = "/" exact />
-                <Route element = { <AdminLogin /> } path = "/login" />
-                <Route element = { <Expanded /> } path = "/:id" />
-                <Route element = { 
-                    <LoginContext.Provider value={{isAuth}}>
-                        <Create />
-                    </LoginContext.Provider>
-                } path = "/create" />
-            </Routes>
-        </BrowserRouter>
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route element = { 
+                        <LoginContext.Provider value={{isAuth}}>
+                            <Home />
+                        </LoginContext.Provider>
+                    } path = "/" exact />
+                    
+                    <Route element = { 
+                        <LoginContext.Provider value={{isAuth}}>
+                            <Create />
+                        </LoginContext.Provider>
+                    } path = "/create" />
+
+                    <Route element = { <AdminLogin /> } path = "/login" />
+                    <Route element = { <Expanded /> } path = "/:id" />
+                </Routes>
+            </BrowserRouter>
+        </div>
     )
 }
 
