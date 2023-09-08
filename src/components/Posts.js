@@ -19,20 +19,13 @@ function Posts({ postObject }) {
   const handleRatingClick = (event) => {
     event.preventDefault();
 
-    if (event.target.id === "upv") {
-      setRating({
-        upvotes: postObject.upvotes + 1,
-        downvotes: postObject.downvotes,
-      });
-    }
-    if (event.target.id === "downv") {
-      setRating({
-        upvotes: postObject.upvotes,
-        downvotes: postObject.downvotes + 1,
-      });
-    }
+    /** Faz o update visual */
+    setRating({
+      ...rating,
+      [event.target.id]: postObject[event.target.id] += 1,
+    });
 
-    // Faz o update do rating do post pelo nome da tag
+    /** Faz o update na base de dados */
     postObject.updateRating(event.target.id);
   };
 
@@ -55,12 +48,12 @@ function Posts({ postObject }) {
         </a>
         <div className="rating-group">
           <a onClick={handleRatingClick}>
-            <div className="rating" id="upv">
+            <div className="rating" id="upvotes">
               {rating.upvotes} Like
             </div>
           </a>
           <a onClick={handleRatingClick}>
-            <div className="rating" id="downv">
+            <div className="rating" id="downvotes">
               {rating.downvotes} Dislike
             </div>
           </a>
