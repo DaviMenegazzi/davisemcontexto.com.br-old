@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "../assets/css/adminlogin.css";
@@ -22,7 +23,14 @@ const LoginPage = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  /* NOTE: Adicionar refresh quando a página mudar. */
+  const handleNavigate = (path) => {
+      navigate(path);
+  }
+
+  const useHandleSubmit = (event) => {
     event.preventDefault();
 
     // faz alguma coisa com os dados do usuário
@@ -34,6 +42,7 @@ const LoginPage = () => {
       .catch((err) => {
         console.log(err);
       });
+      handleNavigate('/');
   };
 
   return (
@@ -59,7 +68,7 @@ const LoginPage = () => {
           />
         </p>
         <p>
-          <button onClick={handleSubmit} id="sub_btn" type="submit">
+          <button onClick={useHandleSubmit} id="sub_btn" type="submit">
             Login
           </button>
         </p>
