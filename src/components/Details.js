@@ -1,4 +1,4 @@
-import "../assets/css/expanded.css";
+import "src/assets/css/expanded.css";
 
 function Details ({ title, content }) {
   return (

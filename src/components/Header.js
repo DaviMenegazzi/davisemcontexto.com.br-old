@@ -1,7 +1,7 @@
 import React from "react";
-import "../assets/css/header.css";
+import "src/assets/css/header.css";
 
-import {LoginContext} from "../pages/LoginPage";
+import {LoginContext} from "src/pages/LoginPage";
 
 const Header = () => {
   const ShowsPostButtonWhenUserLoggedIn = () => {

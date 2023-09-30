@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../assets/css/posts.css";
+import "src/assets/css/posts.css";
 
 function Posts({ postObject }) {
   const [rating, setRating] = React.useState("");

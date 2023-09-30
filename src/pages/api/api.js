@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Md5Crypto } from "./crypto/crypto";
+import { Md5Crypto } from "src/pages/api/crypto/crypto";
 import React from "react";
 
 const apiHOST = "http://localhost:3000/";

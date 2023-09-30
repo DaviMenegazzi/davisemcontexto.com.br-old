@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { handleAuth } from "./pages/api/api";
+import { handleAuth } from "src/pages/api/api";
 import "./assets/css/App.css";
 
-import HomePage from "./pages/HomePage";
-import { LoginPage, LoginContext } from "./pages/LoginPage";
-import DetailsPage from "./pages/DetailsPage";
-import CreatePage from "./pages/CreatePage";
+import HomePage from "src/pages/HomePage";
+import { LoginPage, LoginContext } from "src/pages/LoginPage";
+import DetailsPage from "src/pages/DetailsPage";
+import CreatePage from "src/pages/CreatePage";
 
 const Rotas = () => {
   const [isAuth, setAuth] = React.useState(null);

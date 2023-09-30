@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-import { Post } from "../pages/api/models";
+import { Post } from "src/pages/api/models";
 
 const Create = () => {
   const [created, setCreate] = React.useState(null);

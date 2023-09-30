@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import Details from "../components/Details";
-import { NotFound } from "./errors/NotFound";
-import { handleGetOnly } from "./api/api";
+import Details from "src/components/Details";
+import { NotFound } from "src/pages/errors/NotFound";
+import { handleGetOnly } from "src/pages/api/api";
 
 function DetailsPage () {
   const { slug } = useParams();

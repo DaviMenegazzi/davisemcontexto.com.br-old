@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import "../assets/css/adminlogin.css";
-import { handleLogin } from "./api/api";
+import "src/assets/css/adminlogin.css";
+import { handleLogin } from "src/pages/api/api";
 
 // Essa é o login para ativar a opção de admin
 // ou seja, o caminho "/login" do website

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useGenerateFeed } from "./feed/generate";
-import { Header } from "../components/Header";
+import { useGenerateFeed } from "src/pages/feed/generate";
+import { Header } from "src/components/Header";
 
 // Essa é a home page, ou seja, o caminho "/" do website
 // É essa página que será renderizada no App.js

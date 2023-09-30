@@ -1,8 +1,8 @@
 import React from "react";
 
-import { handleCreate, handleGetOnly, handleRating } from "./api";
+import { handleCreate, handleGetOnly, handleRating } from "src/pages/api/api";
 
-import Posts from "../../components/Posts";
+import Posts from "src/components/Posts";
 
 /**
  * Classe de posts.

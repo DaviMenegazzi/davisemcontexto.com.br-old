@@ -1,9 +1,9 @@
 import React from "react";
 
-import "../assets/css/create.css";
-import { LoginContext } from "./LoginPage";
-import { NotFound } from "./errors/NotFound";
-import Create from "../components/Create";
+import "src/assets/css/create.css";
+import { LoginContext } from "src/pages/LoginPage";
+import { NotFound } from "src/pages/errors/NotFound";
+import Create from "src/components/Create";
 
 const CreatePage = () => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { handleGet } from "../api/api";
-import { Post } from "../api/models";
+import { handleGet } from "src/pages/api/api";
+import { Post } from "src/pages/api/models";
 
 const useGenerateFeed = () => {
   /** A lista com todas as CLASSES para os posts */
